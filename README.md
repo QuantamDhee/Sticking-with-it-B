@@ -22,5 +22,4 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
-# Sticking-with-it-B
 # Sticking-with-notes-B
