@@ -23,3 +23,4 @@ Things you may want to cover:
 
 * ...
 # Sticking-with-it-B
+# Sticking-with-notes-B
