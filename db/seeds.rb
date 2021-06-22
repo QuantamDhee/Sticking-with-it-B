@@ -7,5 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-Note.destroy_all
+
+Category.destroy_all
 
