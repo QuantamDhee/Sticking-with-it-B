@@ -13,7 +13,9 @@ class Api::V1::NotesController < ApplicationController
     end
 
     def create
-        @note = Note.new(note_params)
+
+        category = Category.find_or_create_by(name: params[:category])
+        note = @note = Note.new(name: params[:name], description: params[:description], category: category)
 
         if @note.save
             render json: @note
@@ -22,6 +24,7 @@ class Api::V1::NotesController < ApplicationController
         end
     end
 
+
     private
 
     def find_note
@@ -29,6 +32,10 @@ class Api::V1::NotesController < ApplicationController
     end
 
     def note_params
-        params.require(:note).permit(:name, :description)
+        category = Category.find_or_create_by(name: params[:category])
+        permitted = params.permit(:name, :description)
+        permitted["category_id"] = category.id
+        permitted
     end
+
 end
