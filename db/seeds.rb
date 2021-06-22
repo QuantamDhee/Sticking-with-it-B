@@ -10,18 +10,21 @@
 puts "clearing db data..."
 Category.destroy_all
 User.destroy_all
+Note.destroy_all
 
 
 puts "we creating them Category"
-Category.create(name: "School")
-Category.create(name: "Shopping")
-Category.create(name: "Workout")
+school = Category.create(name: "School")
+shop = Category.create(name: "Shopping")
+workout = Category.create(name: "Workout")
 
 puts "we getting them Users"
-User.create(name: "Johndhee")
-User.create(name: "Diana")
-User.create(name: "Kyle")
+john = User.create(name: "Johndhee")
+diana = User.create(name: "Diana")
+kyle = User.create(name: "Kyle")
 
+puts "sample"
+d = Note.create(name:"coffee", description:"something", user_id:kyle.id, category_id:shop.id)
 
 
 puts "done with seeding boss!"
