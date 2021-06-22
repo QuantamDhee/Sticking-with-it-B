@@ -7,6 +7,21 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-
+puts "clearing db data..."
 Category.destroy_all
+User.destroy_all
 
+
+puts "we creating them Category"
+Category.create(name: "School")
+Category.create(name: "Shopping")
+Category.create(name: "Workout")
+
+puts "we getting them Users"
+User.create(name: "Johndhee")
+User.create(name: "Diana")
+User.create(name: "Kyle")
+
+
+
+puts "done with seeding boss!"
