@@ -23,4 +23,15 @@ Things you may want to cover:
 
 * ...
 # Sticking-with-notes-B
- AYOO
+
+User <-Notes-> Category
+notes belongs_to :user, :category
+
+User has_many notes, has_many category, through: :notes
+Category has_many notes, has_many user, through: :notes
+
+User: name(str)
+Category: name(str)
+Notes: name(str), description(txt), user_id(int), category_id(int)
+
+
