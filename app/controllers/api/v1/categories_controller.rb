@@ -8,4 +8,15 @@ class Api::V1::CategoriesController < ApplicationController
     def show
         render json: @category
     end
+
+    def destroy
+        category = Category.find(params[:id])
+        category.destroy
+    end
+
+    private 
+    
+    def category_params
+        params.permit(:name)
+    end
 end
