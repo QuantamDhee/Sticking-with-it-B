@@ -1,6 +1,6 @@
 class Api::V1::NotesController < ApplicationController
 
-    before_action :find_note, only: [:show, :update, :destroy]
+    before_action :find_note, only: [:show, :edit, :update, :destroy]
 
     def index 
         @notes = Note.all
@@ -19,6 +19,18 @@ class Api::V1::NotesController < ApplicationController
 
         if @note.save
             render json: @note
+        else
+            render json: {error: note.errors.full_messages}, status: :not_acceptable
+        end
+    end
+
+    def edit
+
+    end
+
+    def update 
+        if @note.update(params.require(:note).permit(:name, :description))
+           render json: @note
         else
             render json: {error: note.errors.full_messages}, status: :not_acceptable
         end
