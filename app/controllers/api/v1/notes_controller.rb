@@ -27,6 +27,9 @@ class Api::V1::NotesController < ApplicationController
     def edit
 
     end
+    def destroy
+        
+    end
 
     def update 
         if @note.update(params.require(:note).permit(:name, :description))
