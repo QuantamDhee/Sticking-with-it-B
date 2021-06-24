@@ -25,6 +25,7 @@ kyle = User.create(name: "Kyle")
 
 puts "sample"
 d = Note.create(name:"coffee", description:"something", user_id:kyle.id, category_id:shop.id)
+n = Note.create(name:"test", description:"this is a test", user_id:kyle.id, category_id:shop.id)
 
 
 puts "done with seeding boss!"
