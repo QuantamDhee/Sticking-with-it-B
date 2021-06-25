@@ -25,6 +25,7 @@ class Api::V1::NotesController < ApplicationController
 
     def destroy
         note = Note.find(params[:id])
+        note.destroy
     end
 
     def update 
