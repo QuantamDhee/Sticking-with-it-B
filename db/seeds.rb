@@ -8,9 +8,9 @@
 
 
 puts "clearing db data..."
+Note.destroy_all
 Category.destroy_all
 User.destroy_all
-Note.destroy_all
 
 
 puts "we creating them Category"

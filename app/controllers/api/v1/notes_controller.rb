@@ -13,25 +13,23 @@ class Api::V1::NotesController < ApplicationController
     end
 
     def create
-        
-        @note = Note.new(note_params)
+
+        note = Note.new(note_params)
 
         if note.save
-            render json: @note
+            render json: note
         else
             render json: {error: note.errors.full_messages}, status: :not_acceptable
         end
     end
 
-    def edit
-
-    end
     def destroy
         
     end
 
     def update 
-        if note.update(params.require(:note).permit(:name, :description, :user_id, :category_id))
+        note = Note.find(params[:id])
+        if note.update(params.permit(:name, :description, :user_id, :category_id))
            render json: note
         else
             render json: {error: note.errors.full_messages}, status: :not_acceptable
