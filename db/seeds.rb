@@ -8,9 +8,9 @@
 
 
 puts "clearing db data..."
+Note.destroy_all
 Category.destroy_all
 User.destroy_all
-Note.destroy_all
 
 
 puts "we creating them Category"
@@ -25,7 +25,11 @@ kyle = User.create(name: "Kyle")
 
 puts "sample"
 d = Note.create(name:"coffee", description:"something", user_id:kyle.id, category_id:shop.id)
+<<<<<<< HEAD
 f = Note.create(name:"test", description:"testing", user_id:diana.id, category_id:shop.id)
+=======
+n = Note.create(name:"test", description:"this is a test", user_id:kyle.id, category_id:shop.id)
+>>>>>>> d3bace5038c8f9020110c08bd99f3711a4def642
 
 
 puts "done with seeding boss!"
